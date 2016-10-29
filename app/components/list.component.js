@@ -9,35 +9,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var Item = (function () {
+    function Item(name, state) {
+        if (state === void 0) { state = 'inactive'; }
+        this.name = name;
+        this.state = state;
+    }
+    Item.prototype.toggleState = function () {
+        this.state = (this.state === 'active' ? 'inactive' : 'active');
+    };
+    return Item;
+}());
 var ListComponent = (function () {
     function ListComponent() {
-        for (var i = 0; i < 5; i++) {
-            this.items.push('item' + i);
-        }
+        this.items = [];
+        this.items.push(new Item('Iron Man'));
     }
+    ListComponent.prototype.ngOnInit = function () {
+    };
+    ListComponent.prototype.saveValue = function (event) {
+        this.items.push(new Item(event.target.value));
+    };
+    ListComponent.prototype.toggleState = function (item) {
+        console.log(item);
+    };
     ListComponent = __decorate([
         core_1.Component({
             selector: '',
             templateUrl: './app/templates/list.html',
+            styleUrls: [],
             animations: [
-                core_1.trigger('heroState', [
-                    core_1.state('inactive', core_1.style({ transform: 'translateX(0) scale(1)' })),
-                    core_1.state('active', core_1.style({ transform: 'translateX(0) scale(1.1)' })),
-                    core_1.transition('inactive => active', core_1.animate('100ms ease-in')),
-                    core_1.transition('active => inactive', core_1.animate('100ms ease-out')),
-                    core_1.transition('void => inactive', [
-                        core_1.style({ transform: 'translateX(-100%) scale(1)' }),
+                core_1.trigger('flyInOut', [
+                    core_1.state('in', core_1.style({ opacity: 1 })),
+                    core_1.transition('void => *', [
+                        core_1.style({ opacity: 0 }),
                         core_1.animate(100)
                     ]),
-                    core_1.transition('inactive => void', [
-                        core_1.animate(100, core_1.style({ transform: 'translateX(100%) scale(1)' }))
-                    ]),
-                    core_1.transition('void => active', [
-                        core_1.style({ transform: 'translateX(0) scale(0)' }),
-                        core_1.animate(200)
-                    ]),
-                    core_1.transition('active => void', [
-                        core_1.animate(200, core_1.style({ transform: 'translateX(0) scale(0)' }))
+                    core_1.transition('* => void', [
+                        core_1.animate(100, core_1.style({ transform: 'translateX(100%)' }))
                     ])
                 ])
             ]

@@ -41,6 +41,7 @@ var AppModule = (function () {
                     }])],
             declarations: [app_component_1.AppComponent, list_component_1.ListComponent, home_component_1.HomeComponent, detail_component_1.DetailComponent],
             providers: [getUserInfo_service_1.GetUserInfo],
+            exports: [app_component_1.AppComponent, list_component_1.ListComponent, home_component_1.HomeComponent, detail_component_1.DetailComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

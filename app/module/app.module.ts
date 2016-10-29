@@ -28,6 +28,7 @@ import {DetailComponent} from '../components/detail.component';
     }])],
     declarations: [AppComponent, ListComponent, HomeComponent, DetailComponent],
     providers: [GetUserInfo],
+    exports: [AppComponent,ListComponent, HomeComponent, DetailComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule{}

@@ -1,44 +1,58 @@
-import {Component,  
-        Input,
-        trigger,
-        state,
-        style,
-        transition,
-        animate
+import {
+    Component,
+    Input,
+    trigger,
+    state,
+    style,
+    transition,
+    animate,
+    OnInit
 } from '@angular/core';
+
+class Item {
+    constructor(public name: string,
+        public state = 'inactive') {
+    }
+
+    public toggleState() {
+        this.state = (this.state === 'active' ? 'inactive' : 'active');
+    }
+}
 
 @Component({
     selector: '',
     templateUrl: './app/templates/list.html',
+    styleUrls: [],
     animations: [
-    trigger('heroState', [
-        state('inactive', style({transform: 'translateX(0) scale(1)'})),
-        state('active',   style({transform: 'translateX(0) scale(1.1)'})),
-        transition('inactive => active', animate('100ms ease-in')),
-        transition('active => inactive', animate('100ms ease-out')),
-        transition('void => inactive', [
-        style({transform: 'translateX(-100%) scale(1)'}),
-        animate(100)
-        ]),
-        transition('inactive => void', [
-        animate(100, style({transform: 'translateX(100%) scale(1)'}))
-        ]),
-        transition('void => active', [
-        style({transform: 'translateX(0) scale(0)'}),
-        animate(200)
-        ]),
-        transition('active => void', [
-        animate(200, style({transform: 'translateX(0) scale(0)'}))
+        trigger('flyInOut', [
+            state('in', style({ opacity: 1 })),
+            transition('void => *', [
+                style({ opacity: 0 }),
+                animate(100)
+            ]),
+            transition('* => void', [
+                animate(100, style({ transform: 'translateX(100%)' }))
+            ])
         ])
-    ])
     ]
 })
-export class ListComponent {
-    public items: any[];
+export class ListComponent implements OnInit {
 
-    constructor(){
-        for(let i = 0; i < 5; i++){
-            this.items.push('item'+i);
-        }
+    public items: Item[] = [];
+
+    constructor() {
+        this.items.push(new Item('Iron Man'))
+    }
+
+    ngOnInit() {
+
+    }
+
+    public saveValue(event): void {
+        this.items.push(new Item(event.target.value))
+    }
+
+    public toggleState(item): void {
+        console.log(item);
     }
 }
