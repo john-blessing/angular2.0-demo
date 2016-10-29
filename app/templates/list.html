@@ -2,9 +2,7 @@
   <div class="am-panel-hd">面板标题</div>
   <div class="am-panel-bd">
     <ul class="am-list am-list-static am-list-border">
-        <li>123</li>
-        <li>123</li>
-        <li>123</li>
+        <li *ngFor="let item in items">{{item.name}}</li>
     </ul>
   </div>
 </div>

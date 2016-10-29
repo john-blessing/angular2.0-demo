@@ -11,11 +11,36 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ListComponent = (function () {
     function ListComponent() {
+        for (var i = 0; i < 5; i++) {
+            this.items.push('item' + i);
+        }
     }
     ListComponent = __decorate([
         core_1.Component({
             selector: '',
-            templateUrl: './app/templates/list.html'
+            templateUrl: './app/templates/list.html',
+            animations: [
+                core_1.trigger('heroState', [
+                    core_1.state('inactive', core_1.style({ transform: 'translateX(0) scale(1)' })),
+                    core_1.state('active', core_1.style({ transform: 'translateX(0) scale(1.1)' })),
+                    core_1.transition('inactive => active', core_1.animate('100ms ease-in')),
+                    core_1.transition('active => inactive', core_1.animate('100ms ease-out')),
+                    core_1.transition('void => inactive', [
+                        core_1.style({ transform: 'translateX(-100%) scale(1)' }),
+                        core_1.animate(100)
+                    ]),
+                    core_1.transition('inactive => void', [
+                        core_1.animate(100, core_1.style({ transform: 'translateX(100%) scale(1)' }))
+                    ]),
+                    core_1.transition('void => active', [
+                        core_1.style({ transform: 'translateX(0) scale(0)' }),
+                        core_1.animate(200)
+                    ]),
+                    core_1.transition('active => void', [
+                        core_1.animate(200, core_1.style({ transform: 'translateX(0) scale(0)' }))
+                    ])
+                ])
+            ]
         }), 
         __metadata('design:paramtypes', [])
     ], ListComponent);
