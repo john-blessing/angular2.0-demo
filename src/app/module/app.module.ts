@@ -3,10 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {HttpModule} from '@angular/http';
 import {RouterModule} from '@angular/router';
 import {GetUserInfo} from '../services/getUserInfo.service';
-import {AppComponent} from '../components/app.component';
-import {HomeComponent} from '../components/home.component';
-import {ListComponent} from '../components/list.component';
-import {DetailComponent} from '../components/detail.component';
+import {AppComponent,ListComponent, HomeComponent, DetailComponent} from '../confirm/page-collector.confirm';
 
 @NgModule({
     imports: [
@@ -19,7 +16,7 @@ import {DetailComponent} from '../components/detail.component';
         path: 'detail',
         component: DetailComponent
     }])],
-    declarations: [AppComponent, ListComponent, HomeComponent, DetailComponent],
+    declarations: [AppComponent,ListComponent, HomeComponent, DetailComponent],
     providers: [GetUserInfo],
     exports: [AppComponent,ListComponent, HomeComponent, DetailComponent],
     bootstrap: [AppComponent]
