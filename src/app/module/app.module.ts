@@ -15,12 +15,6 @@ import {DetailComponent} from '../components/detail.component';
     RouterModule.forRoot([{
         path: '',
         component: HomeComponent
-    },{
-        path: 'home',
-        component: HomeComponent
-    }, {
-        path: 'list',
-        component: ListComponent
     }, {
         path: 'detail',
         component: DetailComponent

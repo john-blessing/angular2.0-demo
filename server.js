@@ -41,7 +41,7 @@ var server = new WebpackDevServer(webpack(webpackConfig), {
   //staticOptions: {
   //},
 
-  //clientLogLevel: "info",
+  clientLogLevel: "info",
   // Control the console log messages shown in the browser when using inline mode. Can be `error`, `warning`, `info` or `none`.
 
   // webpack-dev-middleware options
