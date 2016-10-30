@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "A webpack starter for Angular",
   "scripts": {
-    "start": "webpack-dev-server --inline --progress --port 8080",
-    "serve": "node server.js",
+    "start": "nodemon server.js",
     "test": "karma start",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install"
@@ -31,6 +30,7 @@
   "devDependencies": {
     "angular2-template-loader": "^0.4.0",
     "awesome-typescript-loader": "^2.2.4",
+    "bower-webpack-plugin": "^0.1.9",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
