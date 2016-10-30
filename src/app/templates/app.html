@@ -5,4 +5,13 @@
         <li><a routerLink="/list">列表</a></li>
     </ol>
     <router-outlet></router-outlet>
+    <p>hello world</p>
+    <img [src]="heroImageUrl">
+    <div class="am-container">
+        <button class="am-btn am-btn-primary am-round" [disabled]="isUnchanged">确定</button>
+    </div>
+
+    <div [ngClass]="classes">[ngClass] binding to the classes property</div>
+
+    <p class="comment">Typescript and angular2.0</p>
 </div>

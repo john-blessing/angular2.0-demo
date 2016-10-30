@@ -29,14 +29,8 @@ module.exports = {
         loader: 'file?name=assets/[name].[hash].[ext]'
       },
       {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-      },
-      {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw'
+        test: /\.less$/,
+        loader: 'style!css!less?sourceMap'
       }
     ]
   },
@@ -48,6 +42,6 @@ module.exports = {
 
     new HtmlWebpackPlugin({
       template: 'src/index.html'
-    })
+    }),
   ]
 };
