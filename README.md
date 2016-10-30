@@ -1,3 +1,3 @@
 # angular2.0-demo
 
-Angular2.0 搭建架构
+Angular2.0 骨架搭建
