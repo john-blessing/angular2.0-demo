@@ -5,10 +5,10 @@ var helpers = require('./helpers');
 
 module.exports = {
   entry: {
-    'polyfills': './src/polyfills',
-    'vendor': './src/vendor',
-    'app': './src/main'
-  },
+      'polyfills': './src/polyfills',
+      'vendor': './src/vendor',
+      'app': ['./src/main']
+    },
 
   resolve: {
     extensions: ['', '.js', '.ts']
