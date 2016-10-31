@@ -7,10 +7,20 @@ let style = require('./app.less').toString();
     templateUrl: '../templates/app.html',
     styleUrls: [style]
 })
-export class AppComponent {
+export class AppComponent { 
     public heroImageUrl: string = 'http://img03.sogoucdn.com/app/a/100520024/1bbf0255fe550d4529350d3d2cfdafec'
 
     public isUnchanged: boolean = true;
 
-    classes: string = '.inner-word'
+    public active: boolean = true;
+    
+    email: string = '1585185302@qq.com';
+    pwd: string = 'jinjifu02';
+    heroForm: any;
+
+    classes: string = '.inner-word';
+
+    public onSubmit(): void{
+        console.log('data has been submited!')
+    }
 }

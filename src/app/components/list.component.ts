@@ -20,7 +20,7 @@ class Item {
 }
 
 @Component({
-    selector: '',
+    selector: 'list-component',
     templateUrl: '../templates/list.html',
     styleUrls: [],
     animations: [
