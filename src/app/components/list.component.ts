@@ -8,16 +8,7 @@ import {
     animate,
     OnInit
 } from '@angular/core';
-
-class Item {
-    constructor(public name: string,
-        public state = 'inactive') {
-    }
-
-    public toggleState() {
-        this.state = (this.state === 'active' ? 'inactive' : 'active');
-    }
-}
+import {GetUserInfo} from '../services/getUserInfo.service';
 
 @Component({
     selector: 'list-component',
@@ -34,22 +25,23 @@ class Item {
                 animate(100, style({ transform: 'translateX(100%)' }))
             ])
         ])
-    ]
+    ],
+    providers: [GetUserInfo]
 })
 export class ListComponent implements OnInit {
 
-    public items: Item[] = [];
+    public items: any[] = [];
 
-    constructor() {
-        this.items.push(new Item('Iron Man'))
+    constructor(private getUserInfo: GetUserInfo) {
+
     }
 
-    ngOnInit() {
-
+    public ngOnInit(): void {
+        this.items = this.getUserInfo.getInfo();
     }
 
     public saveValue(event: any): void {
-        this.items.push(new Item(event.target.value))
+
     }
 
     public toggleState(item: any): void {

@@ -16,10 +16,11 @@ export class GetUserInfo{
 
     constructor(private http: Http){}
 
-    public getInfo(): Promise<User[]>{
-        return this.http.get('./public/data/data.json')
-            .toPromise()
-            .then(response => response.json().data as User[])
-            .catch(this.handleError);
+    public getInfo(): any[]{
+        return require('./mock-heroes.ts').dataList;
+        // return this.http.get('./')
+        //     .toPromise()
+        //     .then(response => response.json().data as User[])
+        //     .catch(this.handleError);
     }
 }
