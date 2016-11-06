@@ -1,19 +1,6 @@
-<div class="am-container">
-	<!-- 按钮触发器， 需要指定 target -->
-	<button class="am-btn am-btn-primary" data-am-offcanvas="{target: '#doc-oc-demo2', effect: 'push'}">点击显示侧边栏</button>
-
-	<!-- 侧边栏内容 -->
-	<div id="doc-oc-demo2" class="am-offcanvas">
-		<div class="am-offcanvas-bar">
-			<div class="am-offcanvas-content">
-				<p>
-					我不愿让你一个人 <br/> 承受这世界的残忍 <br/> 我不愿眼泪陪你到 永恒
-				</p>
-			</div>
-		</div>
-	</div>
-	<div>
-		<p >hello</p>
-		<p>scott</p>
-	</div>
+<div class="am-container" [ngSwitch]="show_expression">
+	<p *ngSwitchCase="'show_first'" style="color: blue">Adds / removes DOM sub-trees when the nest match expressions matches the switch expression.</p>
+	<p *ngSwitchCase="'show_second'" style="color: red">NgSwitch stamps out nested views when their match expression value matches the value of the switch expression.</p>
+	<p *ngSwitchDefault style="color: brown">The ngSwitchCase directive informs the parent NgSwitch of which view to display when the expression is evaluated. </p>
+	<h2 [ngClass]="first">Angular2.0</h2>
 </div>

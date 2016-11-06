@@ -42,13 +42,23 @@
 		</div>
 
 		<div class="am-topbar-right">
-			<button class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
+			<button (click)="needLogin()" class="am-btn am-btn-primary am-topbar-btn am-btn-sm">登录</button>
 		</div>
 	</div>
 </header>
 <div class="am-container">
-	<img src="http://static.oschina.net/uploads/img/201502/18074233_Yr79.jpg" class="am-img-responsive" alt=""/>
+	<!--<img src="http://static.oschina.net/uploads/img/201502/18074233_Yr79.jpg" class="am-img-responsive" alt=""/>-->
 	<br>
-	<form-component></form-component>
-	<list-component></list-component>
+	<!--<div [ngStyle]="objcontrol">-->
+		<!--<form-component></form-component>-->
+	<!--</div>-->
+	<!--<list-component></list-component>-->
+	<detail-component></detail-component>
+	<p class="langua">I am debugging angular2.0 development!</p>
+	<code>
+		Singleton, Observer, Proxy
+	</code>
+	<wenzi>
+
+	</wenzi>
 </div>

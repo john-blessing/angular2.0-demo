@@ -5,7 +5,7 @@ var webpackConfig = require('./webpack.config');
 var server = new WebpackDevServer(webpack(webpackConfig),{
     clientLogLevel: "info",
     quiet: false,
-    noInfo: false,
+    noInfo: true,
     hot: true,
     compress: true,
     stats: { colors: true }

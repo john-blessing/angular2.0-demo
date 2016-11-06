@@ -5,14 +5,14 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 import { GetUserInfo } from '../services/getUserInfo.service';
-import { AppComponent, ListComponent, FormComponent, DetailComponent } from '../confirm/page-collector.confirm';
+import { AppComponent, ListComponent, FormComponent, DetailComponent, WenziComponent } from '../confirm/page-collector.confirm';
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
         HttpModule],
-    declarations: [AppComponent, ListComponent, FormComponent, DetailComponent],
+    declarations: [AppComponent, ListComponent, FormComponent, DetailComponent, WenziComponent],
     providers: [GetUserInfo],
     bootstrap: [AppComponent]
 })
